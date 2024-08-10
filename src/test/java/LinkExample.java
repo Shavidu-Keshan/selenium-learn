@@ -16,9 +16,7 @@ public class LinkExample {
 
     }
     @Test
-    public void LinkTest()
-
-    {
+    public void LinkTest() {
         //01) Take me dashboard
         WebElement homeLink = driver.findElement(By.linkText("Go to Dashboard"));
         homeLink.click();
@@ -30,6 +28,16 @@ public class LinkExample {
         String path = wheretogo.getAttribute("href");
         System.out.println("This link is going to : " + path);
         //03) Am I broken Link
+        WebElement brokenLink = driver.findElement((By.linkText("Broken?")));
+        brokenLink.click();
+
+        String title = driver.getTitle();
+        if (title.contains("Not broken")) {
+            System.out.println("The Link is broken");
+        }else {
+            System.out.println("Not broken");
+        }
+
         //05) Count page Links
         //06) count layout Links
     }
