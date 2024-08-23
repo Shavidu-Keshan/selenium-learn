@@ -19,7 +19,7 @@ public class AlertExample {
         //1)simple diolog
         WebElement alertbox = driver.findElement(By.id("j_idt88:j_idt91"));
         alertbox.click();
-        Alert alert = driver.switchTo().alert();
+          Alert alert = driver.switchTo().alert();
         alert.accept();
 
         //2)alert confrirm dialog
